@@ -145,18 +145,18 @@
 
 // Добуток: [результат]
 
-function showProduct(multiply) {
-  console.log(`Добуток: ${multiply}`);
-}
+// function showProduct(multiply) {
+//   console.log(`Добуток: ${multiply}`);
+// }
 
 // Потім створи функцію multiplyNumbers(a, b, callback) і передай їй колбек.
 
-function multiplyNumbers(a, b, callback) {
-  const multiply = a * b;
-  callback(multiply);
-}
+// function multiplyNumbers(a, b, callback) {
+//   const multiply = a * b;
+//   callback(multiply);
+// }
 
-multiplyNumbers(2, 4, showProduct);
+// multiplyNumbers(2, 4, showProduct);
 
 // Завдання 3. Перевірка числа
 
@@ -166,33 +166,213 @@ multiplyNumbers(2, 4, showProduct);
 
 // "Непарне", якщо число непарне
 
-function checkEvenOdd(number) {
-  if (number % 2 === 0) {
-    console.log("Парне");
-  } else {
-    console.log("Непарне");
-  }
-}
+// function checkEvenOdd(number) {
+//   if (number % 2 === 0) {
+//     console.log("Парне");
+//   } else {
+//     console.log("Непарне");
+//   }
+// }
 
 // Потім створи функцію evaluateNumber(number, callback) і передай їй колбек.
 
-function evaluateNumber(number, callback) {
-  callback(number);
-}
-evaluateNumber(123, checkEvenOdd);
-evaluateNumber(122, checkEvenOdd);
-evaluateNumber(0, checkEvenOdd);
+// function evaluateNumber(number, callback) {
+//   callback(number);
+// }
+// evaluateNumber(123, checkEvenOdd);
+// evaluateNumber(122, checkEvenOdd);
+// evaluateNumber(0, checkEvenOdd);
 
 // =====================================================
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
 // Класичний for
-for (let i = 0; i < numbers.length; i += 1) {
-  console.log(`Index ${i + 1}, value ${numbers[i]}`);
-}
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(`Index ${i + 1}, value ${numbers[i]}`);
+// }
 
 // Перебираючий метод forEach
-numbers.forEach(function (number, index) {
-  console.log(`Index ${index + 1}, value ${number}`);
-});
+// numbers.forEach(function (number, index) {
+//   console.log(`Index ${index + 1}, value ${number}`);
+// });
+
+// ====================================================
+
+// Напиши функцію processArray(arr, callback),
+//   яка проходить по масиву і викликає callback для кожного елемента.
+
+// function processArray(arr, callback) {
+//   for (let i = 0; i < arr.length; i++) {
+//     callback(arr[i], i, arr); // передаємо елемент, індекс і сам масив
+//   }
+// }
+
+// Приклад використання:
+// const numbers = [1, 2, 3, 4, 5];
+
+// processArray(numbers, function (element, index) {
+//   console.log(`Елемент: ${element}, Індекс: ${index}`);
+// });
+
+// Використання зі стрілочною функцією
+// processArray(numbers, (el) => console.log(el * 2));
+
+// ======================================================
+
+// Сума чисел: Напишіть функцію sumArray(numbers, callback),
+// яка приймає масив чисел numbers та колбек callback.
+// Функція повинна обчислити суму чисел у масиві та передати результат у колбек.
+
+// function sumArray(numbers, callback) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   callback(sum);
+// }
+
+// function showResult(result) {
+//   console.log(result);
+// }
+
+// const arrNums = [1, 2, 7];
+// sumArray(arrNums, showResult);
+
+// ======================================================
+
+// Подвоєння чисел: Напишіть функцію doubleArray(numbers, callback),
+// яка приймає масив чисел numbers та колбек callback.
+// Функція повинна подвоїти кожне число в масиві та передати новий масив у колбек.
+
+// function doubleArray(numbers, callback) {
+//   let doubled = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     doubled.push(numbers[i] * 2);
+//   }
+//   callback(doubled);
+// }
+
+// function shownResult(result) {
+//   console.log(result);
+// }
+
+// const arr = [1, 2, 3, 4];
+// doubleArray(arr, shownResult);
+
+// ======================================================
+
+// Фільтр слів: Напишіть функцію filterWords(words, condition, callback),
+// яка приймає масив рядків words, функцію condition (перевірка рядка) та колбек callback.
+// Функція повинна фільтрувати слова масиву за допомогою переданої умови та
+// передати відфільтрований масив у колбек.
+
+// function filterWords(words, condition, callback) {
+//   const filtered = words.filter(condition);
+//   callback(filtered);
+// }
+
+// function filteredByCondition(word) {
+//   return !word.includes("spam");
+// }
+
+// function shownResult(result) {
+//   console.log(result);
+// }
+
+// const wordsArr = ["spam", "mail", "post", "play"];
+// filterWords(wordsArr, filteredByCondition, shownResult);
+
+// ======================================================
+
+// Капіталізація рядків: Напишіть функцію capitalizeStrings(strings, callback),
+// яка приймає масив рядків strings та колбек callback.
+// Функція повинна перетворити всі рядки в масиві, роблячи першу літеру кожного рядка великою,
+// і передати перетворений масив в колбек.
+
+// function capitalizeStrings(strings, callback) {
+//   const capitalizeArr = strings.map((string) => {
+//     if (typeof string !== "string") return string; // якщо не рядок — повертаємо як є
+//     if (string.length === 0) return string; // якщо порожній — нічого не міняємо
+//     return string.charAt(0).toUpperCase() + string.slice(1);
+//   });
+
+//   callback(capitalizeArr);
+// }
+
+// function shownResult(result) {
+//   console.log(result);
+// }
+
+// const strArr = ["paper", "zoom", "google", "Thunder", "", null];
+// capitalizeStrings(strArr, shownResult);
+
+// ======================================================
+
+// Сортування чисел: Напишіть функцію sortNumbers(numbers, callback),
+// яка приймає масив чисел numbers та колбек callback.
+// Функція повинна відсортувати числа в масиві за зростанням та передати відсортований масив у колбек.
+
+// function sortNumbers(numbers, callback) {
+//   const toSortedNumsArr = numbers.toSorted((a, b) => a - b);
+
+//   callback(toSortedNumsArr);
+// }
+
+// function showResult(result) {
+//   console.log(result);
+// }
+
+// const numsArr = [32, 54, 65, 11, 202, 43, 15, 11];
+// sortNumbers(numsArr, showResult);
+
+// ======================================================
+
+// Пошук максимуму: Напишіть функцію findMax(numbers, callback),
+// яка приймає масив чисел numbers та колбек callback.
+// Функція повинна знайти максимальне число в масиві та передати його в колбек.
+
+// function findMax(numbers, callback) {
+//   const validNums = numbers.filter(
+//     (num) => typeof num === "number" && !isNaN(num)
+//   );
+//   const maxNum = validNums.length ? Math.max(...validNums) : null;
+//   callback(maxNum);
+// }
+
+// function shownResult(res) {
+//   console.log("Max number is -", res);
+// }
+
+// const numsArr = [12, 134, 43, 765, 1000, 1000.512];
+// findMax(numsArr, shownResult);
+
+// const numsArr2 = [NaN, "str", null];
+// findMax(numsArr2, shownResult);
+
+// ======================================================
+
+// Перевірка на парність: Напишіть функцію checkEven(numbers, callback),
+// яка приймає масив чисел numbers та колбек callback.
+// Функція повинна перевірити, чи всі числа в масиві парні, і передати результат перевірки колбек.
+
+// ======================================================
+
+// Об'єднання рядків: Напишіть функцію concatStrings(strings, separator, callback),
+// яка приймає масив рядків strings, рядок separator та колбек callback.
+// Функція повинна об'єднати рядки з масиву, розділяючи їх переданим роздільником,
+// і передати рядок, що вийшов, в колбек.
+
+// ======================================================
+
+// Перетворення в числа: Напишіть функцію parseNumbers(strings, callback),
+// яка приймає масив рядків strings та колбек callback.
+// Функція повинна перетворити кожен рядок з масиву на число і передати новий масив чисел в колбек.
+
+// ======================================================
+
+// Підрахунок символів: Напишіть функцію countCharacters(strings, callback),
+// яка приймає масив рядків strings та колбек callback.
+// Функція повинна підрахувати загальну кількість символів у всіх рядках масиву та передати результат у колбек.
+
+// ======================================================

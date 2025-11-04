@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice-event-delegation</title>
+    <link rel="stylesheet" href="css/28-event-delegation.css" />
+  </head>
+  <body>
+    <p><a href="./index.html">Go back</a></p>
+
+    <div id="parent">
+      Parent
+      <div id="child">
+        Child
+        <div id="descendant">Descendant</div>
+      </div>
+    </div>
+
+    <div>
+      <ul id="parent-list">
+        Parent list
+        <li id="child-item">Child-1</li>
+        <li id="child-item">Child-2</li>
+        <li id="child-item">Child-3</li>
+        <li id="child-item">Child-4</li>
+      </ul>
+    </div>
+
+    <div id="main">
+      Main level
+      <div id="middle">
+        Middle level<br /><button type="button" id="btn">Push</button>
+      </div>
+    </div>
+
+    <div>
+      <ul id="tasks-list">
+        Tasks list
+        <li class="task-item">Task-1</li>
+        <li class="task-item">Task-2</li>
+        <li class="task-item">Task-3</li>
+      </ul>
+
+      <style>
+        .done {
+          background-color: lightgreen;
+          text-decoration: line-through;
+        }
+      </style>
+    </div>
+
+    <ul id="tobuy">
+      <li>Product-1 <button class="delete">Delete</button></li>
+      <li>Product-2 <button class="delete">Delete</button></li>
+    </ul>
+
+    <script src="./js/28-event-delegation.js"></script>
+  </body>
+</html>

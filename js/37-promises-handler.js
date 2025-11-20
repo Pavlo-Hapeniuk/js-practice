@@ -145,24 +145,24 @@ function fetchProducts() {
 
 // «Деякі дані не вдалося завантажити», якщо є відхилені проміси.
 
-Promise.allSettled([fetchUser(), fetchOrders(), fetchProducts()])
-  .then((results) => {
-    // Виводимо результати кожного промісу
-    results.forEach((result, index) => {
-      if (result.status === "fulfilled") {
-        console.log(`Проміс ${index + 1} виконано:`, result.value);
-      } else {
-        console.log(`Проміс ${index + 1} відхилено:`, result.reason);
-      }
-    });
+// Promise.allSettled([fetchUser(), fetchOrders(), fetchProducts()])
+//   .then((results) => {
+//     // Виводимо результати кожного промісу
+//     results.forEach((result, index) => {
+//       if (result.status === "fulfilled") {
+//         console.log(`Проміс ${index + 1} виконано:`, result.value);
+//       } else {
+//         console.log(`Проміс ${index + 1} відхилено:`, result.reason);
+//       }
+//     });
 
-    // Перевірка бонусного умовного виводу
-    const hasRejected = results.some((result) => result.status === "rejected");
+//     // Перевірка бонусного умовного виводу
+//     const hasRejected = results.some((result) => result.status === "rejected");
 
-    if (hasRejected) {
-      console.log("Деякі дані не вдалося завантажити");
-    } else {
-      console.log("Усі дані успішно завантажені");
-    }
-  })
-  .catch((error) => console.log(error));
+//     if (hasRejected) {
+//       console.log("Деякі дані не вдалося завантажити");
+//     } else {
+//       console.log("Усі дані успішно завантажені");
+//     }
+//   })
+//   .catch((error) => console.log(error));

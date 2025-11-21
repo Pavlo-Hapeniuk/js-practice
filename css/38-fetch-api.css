@@ -1,42 +1,50 @@
-/* Загальні стилі */
+/* ==================== Загальні стилі ==================== */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: Arial, sans-serif; /* Основний шрифт */
+  background: #f4f4f4; /* Світлий фон для сторінки */
   margin: 0;
   padding: 20px;
   color: #333;
 }
 
 a {
-  color: #007bff;
+  color: #007bff; /* Стиль для посилань */
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Підкреслення при наведенні */
 }
 
-/* Контейнер */
+/* ==================== Контейнери ==================== */
+
 .block {
-  max-width: 420px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block; /* Стандартно для <div> */
+  margin-bottom: 30px; /* Відступ між формами / блоками */
+  max-width: 420px; /* Максимальна ширина блоку */
+  margin: 40px auto; /* Центрування блоку на сторінці */
+  background: #fff; /* Білий фон */
+  padding: 25px 30px; /* Внутрішні відступи */
+  border-radius: 12px; /* Закруглення кутів */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легка тінь */
 }
 
-/* Форма */
+/* ==================== Форми ==================== */
 .search-form {
-  display: flex;
-  gap: 10px;
+  display: flex; /* Розташування input і кнопки в ряд */
+  flex-direction: column; /* Вертикальний стовпчик */
+  gap: 10px; /* Проміжок між ними */
   margin-bottom: 25px;
+}
+
+.form-group {
+  width: 100%; /* Поле займає всю ширину */
 }
 
 .form-control {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* Світло-сіра рамка */
   border-radius: 8px;
   width: 100%;
   transition: border-color 0.2s ease;
@@ -44,7 +52,7 @@ a:hover {
 
 .form-control:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #007bff; /* Акцент при фокусі */
 }
 
 .btn {
@@ -62,10 +70,10 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background: #0056b3;
+  background: #0056b3; /* Темніша кнопка при наведенні */
 }
 
-/* Блок інформації */
+/* ==================== Блок Binance ==================== */
 .binance-block {
   text-align: center;
   background: #fafafa;
@@ -89,6 +97,147 @@ a:hover {
 .coin-price {
   font-size: 26px;
   font-weight: bold;
-  color: #28a745;
+  color: #28a745; /* Зелений колір для ціни */
   margin: 0;
+}
+
+/* ==================== Блок Heroes ==================== */
+.hero-container {
+  display: flex;
+  flex-wrap: wrap; /* Картки переходять на новий ряд */
+  gap: 20px;
+  justify-content: start; /* Початок ряду */
+}
+
+/* Картка героя */
+.hero-card {
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-5px); /* Легка анімація при наведенні */
+}
+
+/* Зображення героя */
+.image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eaeaea; /* Світлий фон для картинок */
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Тіло картки */
+.hero-body {
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.hero-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0 10px 0;
+}
+
+/* Статистика героя */
+.hero-powerstats {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.hero-powerstats span {
+  display: block;
+  font-weight: bold;
+  color: #007bff; /* Акцент на цифрах сил */
+}
+
+.hero-bio {
+  font-size: 12px;
+  color: #555; /* Трохи тьмяний текст для деталей */
+  margin: 0;
+}
+
+/* ==================== Блок IP ==================== */
+.info-card {
+  background: #fafafa; /* Світлий фон */
+  border: 1px solid #eee; /* Легка рамка */
+  border-radius: 12px; /* Скруглення */
+  padding: 20px; /* Внутрішній відступ */
+  margin-top: 20px; /* Відступ після форми */
+  display: flex;
+  flex-direction: column; /* Всі елементи у стовпчик */
+  gap: 12px; /* Проміжки між рядками */
+}
+
+/* Кожен рядок з інформацією */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+/* Прапор країни */
+.flag {
+  width: 32px;
+  height: 22px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #ddd; /* Невелика рамка */
+}
+
+/* Назва поля (Country, Currency…) */
+.info-label {
+  font-weight: bold;
+  color: #555;
+  min-width: 130px; /* Щоб вирівнювання було рівним */
+}
+
+/* Значення інформації */
+.info-value {
+  font-weight: 600;
+  color: #007bff; /* Синій акцент */
+}
+
+/* ==================== Форма IP (розширена) ==================== */
+.js-location-form {
+  display: flex;
+  flex-direction: column; /* Все у стовпчик */
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* Поля у формі */
+.js-location-form .form-group {
+  display: flex;
+  flex-direction: column; /* Поля – одне під одним */
+  gap: 10px;
+}
+
+.js-location-form .form-control {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+
+.js-location-form .form-control:focus {
+  outline: none;
+  border-color: #007bff;
 }

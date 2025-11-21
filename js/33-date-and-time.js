@@ -120,27 +120,27 @@
 
 // Створи поточну дату now.
 
-const now = new Date();
+// const now = new Date();
 
-// Виведи у консоль:
+// // Виведи у консоль:
 
-// день тижня (0–6),
+// // день тижня (0–6),
 
-console.log(now.getDay());
+// console.log(now.getDay());
 
-// день місяця,
+// // день місяця,
 
-console.log(now.getMonth());
+// console.log(now.getMonth());
 
-// місяць,
+// // місяць,
 
-console.log(now.getMonth());
+// console.log(now.getMonth());
 
-// рік.
+// // рік.
 
-console.log(now.getFullYear());
+// console.log(now.getFullYear());
 
-// Потім зміни рік на 2030 і виведи знову.
+// // Потім зміни рік на 2030 і виведи знову.
 
-now.setFullYear(2030);
-console.log(now.getFullYear());
+// now.setFullYear(2030);
+// console.log(now.getFullYear());
